@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Option</title>
+</head>
+<body>
+<h1>Варианты ответов</h1>
+<form action="vote">
+
+<#list optionList as option>
+    <input type="radio" name="optionId" value="${option.id}">${option.text}
+</#list>
+<input type="submit">
+</form>
+</body>
+</html>
