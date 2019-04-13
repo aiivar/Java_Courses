@@ -23,14 +23,20 @@ public class UserController {
 
     @GetMapping("/enter")
     public String login(@RequestParam String username, @RequestParam String password){
-        User u = userDao.findByName(username);
-        if (u.getPassword().equals(password)){
-            return ("redirect:/user?id="+u.getId());
+
+        if(username.equals("Admin") && password.equals("postgres")){
+            return "admin_page";
         }
-        else{
-            return ("signIn_page");
+        else {
+            User u = userDao.findByName(username);
+            if (u.getPassword().equals(password)) {
+                return ("redirect:/user?id=" + u.getId());
+            } else {
+                return ("signIn_page");
+            }
         }
     }
+
 
     @GetMapping("/register")
     public String register(){
