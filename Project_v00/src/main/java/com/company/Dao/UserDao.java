@@ -24,10 +24,24 @@ public class UserDao {
         return u;
     }
 
+    public User findByName(String username){
+        String sqlQuery = "SELECT * FROM \"user\" WHERE username = ?";
+        Object[] params = {username};
+        User u = jdbcTemplate.queryForObject(sqlQuery, params, userRowMapper);
+        return u;
+    }
+
     public User save(User user){
         Object[] params = {user.getUsername(), user.getPassword()};
-        Integer id = jdbcTemplate.queryForObject("INSER INTO \"user\" (username, password) "+"VALUES (?,?) RETURNING id", params, Integer.class);
+        Integer id = jdbcTemplate.queryForObject("INSERT INTO \"user\" (username, password) "+"VALUES (?,?) RETURNING id", params, Integer.class);
         user.setId(id);
         return user;
+    }
+
+    public Boolean exists(String username){
+       String sqlQuery ="SELECT EXISTS (SELECT * FROM \"user\" WHERE username = ?)";
+       Object[] params = {username};
+       Boolean exists = jdbcTemplate.queryForObject(sqlQuery, params, Boolean.class);
+       return exists;
     }
 }
