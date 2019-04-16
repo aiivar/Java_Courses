@@ -25,7 +25,7 @@ public class UserController {
     public String login(@RequestParam String username, @RequestParam String password){
 
         if(username.equals("Admin") && password.equals("postgres")){
-            return "admin_page";
+            return "save_car";
         }
         else {
             User u = userDao.findByName(username);

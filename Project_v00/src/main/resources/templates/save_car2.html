@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save Car 2</title>
+</head>
+<body>
+<h1>Выберите модель</h1>
+<ol>
+    <#list carList as car>
+        <li>
+            <a href="/save_car3?modelId=${car.id}">
+                ${car.name}
+            </a>
+        </li>
+    </#list>
+</ol>
+</body>
+</html>
