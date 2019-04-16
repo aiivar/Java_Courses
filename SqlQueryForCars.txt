@@ -1,0 +1,23 @@
+﻿INSERT INTO mark (name) 
+VALUES
+('BMW'),
+('Kia')
+
+SELECT * FROM mark
+
+ALTER TABLE model ADD COLUMN mark_id integer;
+ALTER TABLE model DROP COLUMN color CASCADE;
+
+INSERT INTO model (name, bodytype, seatsnum, carclass, country, carrelease, gearbox, hpower, maxspeed, mark_id)
+VALUES
+('X5','Внедорожник', 5, 'K', 'Германия',2013,'Auto',220,218,1),
+('X4','Внедорожник', 5, 'K', 'Германия',2018,'Auto',190,213,1),
+('Rio','Седан', 5, 'B', 'Южная Корея',2017,'Mech/Auto',123,192,2),
+('Forte','Седан', 5, 'C', 'Южная Корея',2012,'Mech/Auto',145,180,2)
+
+INSERT INTO color (color) VALUES
+('Black'),
+('White'),
+('Blue')
+
+SELECT * FROM model 
