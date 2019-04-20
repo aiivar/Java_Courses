@@ -7,14 +7,13 @@
 </head>
 <body>
 <h1>Выберите модель</h1>
-<ol>
+<form action="/save_car3">
     <#list carList as car>
-        <li>
-            <a href="/save_car3?modelId=${car.id}">
-                ${car.name}
-            </a>
-        </li>
+        <label for="car">${car.name}</label>
+        <input id="car" type="radio" name="modelId" value="${car.id}"/>
     </#list>
-</ol>
+    <input type="hidden" name="mark_id" value="${mark_id}">
+    <input type="submit" value="Выбрать">
+</form>
 </body>
 </html>

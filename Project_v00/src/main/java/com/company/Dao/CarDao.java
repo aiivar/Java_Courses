@@ -1,6 +1,8 @@
 package com.company.Dao;
 
 import com.company.Objects.Car;
+import com.company.Objects.CarColor;
+import com.company.Objects.CarMark;
 import com.company.Objects.CarModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -42,8 +44,17 @@ public class CarDao {
         return  models;
     }
 
+    @Autowired
+    CarColorRowMapper carColorRowMapper;
 
+    @Autowired
+    CarMarkRowMapper carMarkRowMapper;
 
+    public List<CarColor> carColors(){
+        String sqlQuery = "SELECT * FROM color";
+        List<CarColor> colors = jdbcTemplate.query(sqlQuery, carColorRowMapper);
+        return  colors;
+    }
 
 
     public Car save(Car car){
@@ -51,6 +62,27 @@ public class CarDao {
         Integer id = jdbcTemplate.queryForObject("INSERT INTO \"car\" (mark_id, model_id, color_id) "+"VALUES (?,?,?) RETURNING id", params, Integer.class);
         car.setId(id);
         return car;
+    }
+
+    public CarMark MarkById(Integer id){
+        String sqlQuery = "SELECT * FROM mark WHERE id = ?";
+        Object[] params = {id};
+        CarMark mark = jdbcTemplate.queryForObject(sqlQuery, params, carMarkRowMapper);
+        return mark;
+    }
+
+    public CarModel ModelById(Integer id){
+        String sqlQuery = "SELECT * FROM model WHERE id = ?";
+        Object[] params = {id};
+        CarModel model = jdbcTemplate.queryForObject(sqlQuery, params, carModelRowMapper);
+        return model;
+    }
+
+    public CarColor ColorById(Integer id){
+        String sqlQuery = "SELECT * FROM color WHERE id = ?";
+        Object[] params = {id};
+        CarColor color = jdbcTemplate.queryForObject(sqlQuery, params, carColorRowMapper);
+        return color;
     }
 
     public Boolean exists(Integer id){
