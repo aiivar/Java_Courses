@@ -1,14 +1,11 @@
 package com.company.Dao;
 
-import com.company.Objects.Car;
-import com.company.Objects.CarColor;
-import com.company.Objects.CarMark;
-import com.company.Objects.CarModel;
+import com.company.Objects.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by roi on 4/16/2019.
@@ -83,6 +80,39 @@ public class CarDao {
         Object[] params = {id};
         CarColor color = jdbcTemplate.queryForObject(sqlQuery, params, carColorRowMapper);
         return color;
+    }
+
+    public List<CarList> CarList(){
+        String sqlQuery = "SELECT * FROM car";
+        List<Car> cars = jdbcTemplate.query(sqlQuery, carRowMapper);
+        List<CarList> carList = new ArrayList<>();
+        for (int i = 0; i <cars.size() ; i++) {
+            Car car = cars.get(i);
+            CarList oneCarList= new CarList();
+            oneCarList.setId(car.getId());
+            oneCarList.setMark(MarkById(car.getCarMark_id()).getName());
+            oneCarList.setModel(ModelById(car.getCarModel_id()).getName());
+            oneCarList.setColor(ColorById(car.getCarColor_id()).getColor());
+            carList.add(oneCarList);
+        }
+        return  carList;
+    }
+
+    public List<CarList> CarListByMark(Integer id){
+        String sqlQuery = "SELECT * FROM car WHERE mark_id=?";
+        Object[] params = {id};
+        List<Car> cars = jdbcTemplate.query(sqlQuery, params, carRowMapper);
+        List<CarList> carList = new ArrayList<>();
+        for (int i = 0; i <cars.size() ; i++) {
+            Car car = cars.get(i);
+            CarList oneCarList= new CarList();
+            oneCarList.setId(car.getId());
+            oneCarList.setMark(MarkById(car.getCarMark_id()).getName());
+            oneCarList.setModel(ModelById(car.getCarModel_id()).getName());
+            oneCarList.setColor(ColorById(car.getCarColor_id()).getColor());
+            carList.add(oneCarList);
+        }
+        return  carList;
     }
 
     public Boolean exists(Integer id){

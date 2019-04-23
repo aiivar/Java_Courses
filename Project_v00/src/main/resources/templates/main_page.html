@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+<h1>Список</h1>
+<ol>
+    <#list carList as car>
+        <li>
+            <a href="http://localhost:8080/car?id=${car.getId()}">
+                <p>Марка: ${car.getMark()} Модель: ${car.getModel()} Цвет: ${car.getColor()}</p>
+            </a>
+        </li>
+    </#list>
+    <form action="/main_page">
+        <input type="submit" name="mark_id" value="1">
+        <input type="submit" name="mark_id" value="2">
+    </form>
+    <form action="/main_page">
+        <input type="submit" value="Все">
+    </form>
+</ol>
+</body>
+</html>
