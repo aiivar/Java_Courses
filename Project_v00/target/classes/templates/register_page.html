@@ -2,15 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="signin.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
-<form action="/create_user">
-    <h3>Username</h3>
-    <input  type="text" name="username">
-    <h3>Password</h3>
-    <input type="text" name="password">
-    <input type="submit" value="Enter">
-</form>
+<header>
+    <div class="container">
+        <h1>BestAuto.com</h1>
+        <h4>Приветствую на нашем сайте</h4>
+    </div>
+</header>
+<div class="container emp-profile">
+    <div id="sgin" class="container-fluid">
+        <h2>Регистрация</h2>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="/create_user">
+                    <h3>Username</h3>
+                    <div class="form-group">
+                        <input  type="text" name="username" class="form-control" placeholder="Username">
+                    </div>
+                    <h3>Password</h3>
+                    <div class="form-group">
+                        <input  type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <p> </p>
+                    <input type="submit" value="Enter">
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

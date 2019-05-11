@@ -1,0 +1,35 @@
+body{
+    background: -webkit-linear-gradient(left, #F13C70, #fe673f);
+}
+
+header .container {
+color: white;
+}
+
+header{
+margin-top:1%;
+}
+
+.emp-profile{
+    padding-top:3%;
+    margin-top:2%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+#sgin form {
+margin-top: 10%;
+}
+
+#sgin h2 {
+margin-top: 2%;
+}
+
+#sgin {
+padding-top:1%
+margin-top: 2%;
+text-align: center;
+background-color: #fff;
+height: 440px;
+}

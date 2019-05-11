@@ -32,7 +32,7 @@ public class UserController {
             if (u.getPassword().equals(password)) {
                 return ("redirect:/user?id=" + u.getId());
             } else {
-                return ("signIn_page");
+                return ("signIn_page_invalidData");
             }
         }
     }
@@ -53,7 +53,7 @@ public class UserController {
         User savedUser = userDao.save(u);
         return ("redirect:/user?id=" + savedUser.getId());}
         else {
-            return "register_page";
+            return "register_page_exists0";
         }
     }
 
