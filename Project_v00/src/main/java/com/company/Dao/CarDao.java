@@ -1,6 +1,7 @@
 package com.company.Dao;
 
 import com.company.Objects.*;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -93,6 +94,16 @@ public class CarDao {
             oneCarList.setMark(MarkById(car.getCarMark_id()).getName());
             oneCarList.setModel(ModelById(car.getCarModel_id()).getName());
             oneCarList.setColor(ColorById(car.getCarColor_id()).getColor());
+            oneCarList.setCarImage(ModelById(car.getCarModel_id()).getCarImage());
+            oneCarList.setBodyType(ModelById(car.getCarModel_id()).getBodyType());
+            oneCarList.setSeatsNum(ModelById(car.getCarModel_id()).getSeatsNum());
+            oneCarList.setCarClass(ModelById(car.getCarModel_id()).getCarClass());
+            oneCarList.setCountry(ModelById(car.getCarModel_id()).getCountry());
+            oneCarList.setCarRelease(ModelById(car.getCarModel_id()).getCarRelease());
+            oneCarList.setGearbox(ModelById(car.getCarModel_id()).getGearbox());
+            oneCarList.setHPower(ModelById(car.getCarModel_id()).getHPower());
+            oneCarList.setMaxSpeed(ModelById(car.getCarModel_id()).getMaxSpeed());
+            oneCarList.setCost(ModelById(car.getCarModel_id()).getCost());
             carList.add(oneCarList);
         }
         return  carList;
@@ -110,6 +121,16 @@ public class CarDao {
             oneCarList.setMark(MarkById(car.getCarMark_id()).getName());
             oneCarList.setModel(ModelById(car.getCarModel_id()).getName());
             oneCarList.setColor(ColorById(car.getCarColor_id()).getColor());
+            oneCarList.setCarImage(ModelById(car.getCarModel_id()).getCarImage());
+            oneCarList.setBodyType(ModelById(car.getCarModel_id()).getBodyType());
+            oneCarList.setSeatsNum(ModelById(car.getCarModel_id()).getSeatsNum());
+            oneCarList.setCarClass(ModelById(car.getCarModel_id()).getCarClass());
+            oneCarList.setCountry(ModelById(car.getCarModel_id()).getCountry());
+            oneCarList.setCarRelease(ModelById(car.getCarModel_id()).getCarRelease());
+            oneCarList.setGearbox(ModelById(car.getCarModel_id()).getGearbox());
+            oneCarList.setHPower(ModelById(car.getCarModel_id()).getHPower());
+            oneCarList.setMaxSpeed(ModelById(car.getCarModel_id()).getMaxSpeed());
+            oneCarList.setCost(ModelById(car.getCarModel_id()).getCost());
             carList.add(oneCarList);
         }
         return  carList;

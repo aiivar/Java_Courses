@@ -14,12 +14,18 @@
 </head>
 <body>
 <h1>Список</h1>
+<div class="container-fluid">
 <ol>
     <#list carList as car>
         <li>
+            <div class="row">
+                <div class="col-md-4"><img height="80px" src="${car.getCarImage()}" alt="null"></div>
+                <div class="col-md-8">
             <a href="http://localhost:8080/car?id=${car.getId()}">
-                <p>Марка: ${car.getMark()} Модель: ${car.getModel()} Цвет: ${car.getColor()}</p>
+                <p>Марка: ${car.getMark()} Модель: ${car.getModel()} Цвет: ${car.getColor()} Цена: ${car.getCost()} </p>
             </a>
+                </div>
+            </div>
         </li>
     </#list>
     <form action="/main_page">
@@ -30,5 +36,6 @@
         <input type="submit" value="Все">
     </form>
 </ol>
+</div>
 </body>
 </html>

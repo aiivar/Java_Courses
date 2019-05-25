@@ -19,6 +19,11 @@ public class SiteConroller {
     @Autowired
     CarDao carDao;
 
+    @GetMapping("/main")
+    public String Main(){
+        return "main";
+    }
+
     @GetMapping("/main_page")
     public String MainPage(Model model){
         List<CarList> cars = carDao.CarList();

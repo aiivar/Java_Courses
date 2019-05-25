@@ -20,6 +20,16 @@ public class CarModelRowMapper implements RowMapper<CarModel>{
         cm.setId(resultSet.getInt("id"));
         cm.setName(resultSet.getString("name"));
         cm.setMark_id(resultSet.getInt("mark_id"));
+        cm.setBodyType(resultSet.getString("bodytype"));
+        cm.setSeatsNum(resultSet.getInt("seatsnum"));
+        cm.setCarClass(resultSet.getString("carclass"));
+        cm.setCountry(resultSet.getString("country"));
+        cm.setCarRelease(resultSet.getInt("carrelease"));
+        cm.setGearbox(resultSet.getString("gearbox"));
+        cm.setHPower(resultSet.getInt("hpower"));
+        cm.setMaxSpeed(resultSet.getInt("maxspeed"));
+        cm.setCost(resultSet.getLong("cost"));
+        cm.setCarImage(resultSet.getString("model_image"));
         return cm;
     }
 }

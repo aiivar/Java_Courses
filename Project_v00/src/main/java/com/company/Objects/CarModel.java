@@ -8,14 +8,34 @@ public class CarModel {
    private String name;
    private String bodyType;
    private Integer seatsNum;
-   private char carClass;
+   private String carClass;
    private String Country;
    private Integer carRelease;
    private String gearbox;
    private Integer HPower;
    private Integer MaxSpeed;
-   private String color;
+   private Long Cost;
+    private String color;
    private Integer mark_id;
+   private String CarImage;
+
+    public String getCarImage() {
+        return CarImage;
+    }
+
+    public void setCarImage(String carImage) {
+        CarImage = carImage;
+    }
+
+    public Long getCost() {
+        return Cost;
+    }
+
+    public void setCost(Long cost) {
+        Cost = cost;
+    }
+
+
 
     public Integer getMark_id() {
         return mark_id;
@@ -57,11 +77,11 @@ public class CarModel {
         this.seatsNum = seatsNum;
     }
 
-    public char getCarClass() {
+    public String getCarClass() {
         return carClass;
     }
 
-    public void setCarClass(char carClass) {
+    public void setCarClass(String carClass) {
         this.carClass = carClass;
     }
 

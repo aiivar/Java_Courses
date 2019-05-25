@@ -56,13 +56,12 @@ public class CarController {
     public String carPage(Model model, @RequestParam Integer id){
         Car c = carDao.find(id);
         Integer carId = c.getId();
+        CarModel cm = carDao.ModelById(c.getCarModel_id());
         String carMark = carDao.MarkById(c.getCarMark_id()).getName();
-        String carModel = carDao.ModelById(c.getCarModel_id()).getName();
-        String carColor = carDao.ColorById(c.getCarColor_id()).getColor();
+        cm.setColor(carDao.ColorById(c.getCarColor_id()).getColor());
         model.addAttribute("carId", carId);
         model.addAttribute("carMark", carMark);
-        model.addAttribute("carModel", carModel);
-        model.addAttribute("carColor", carColor);
+        model.addAttribute("car", cm);
         return "car_page";
     }
 }
