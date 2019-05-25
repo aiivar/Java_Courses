@@ -21,3 +21,25 @@ INSERT INTO color (color) VALUES
 ('Blue')
 
 SELECT * FROM model 
+
+_________________________________________________________________________________________________________
+
+SELECT * FROM model
+
+ALTER TABLE model ADD COLUMN model_image TEXT;
+
+ALTER TABLE model ADD COLUMN cost BIGINT;
+
+UPDATE model SET model_image = 'https://c4d709dd302a2586107d-f8305d22c3db1fdd6f8607b49e47a10c.ssl.cf1.rackcdn.com/thumbnails/stock-images/969f115d58f7f6ad4d59b7c587f5082a.png' WHERE id = 2;
+
+UPDATE model SET model_image = 'https://autoreview.ru/images/Article/1658/Article_165836_860_575.jpg' WHERE id = 1;
+
+UPDATE model SET model_image = 'https://alarm-motors.ru/i/CarImageGallery.1132.jpg' WHERE id = 3;
+
+UPDATE model SET model_image = 'https://cars.usnews.com/static/images/Auto/izmo/i110536473/2019_kia_forte_angularfront.jpg' WHERE id = 4;
+
+UPDATE model SET cost =3500000  WHERE id = 2;
+
+UPDATE model SET cost =4500000  WHERE id = 1 ;
+UPDATE model SET cost =750000  WHERE id = 3;
+UPDATE model SET cost =500000  WHERE id =4 ;
