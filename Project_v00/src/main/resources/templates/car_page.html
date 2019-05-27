@@ -3,11 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <title>CarPage</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
-    <h3>Mark: ${carMark}</h3>
+  <!--  <h3>Mark: ${carMark}</h3>
     <p>Model: ${car.getName()}</p>
     <p>Color: ${car.getColor()}</p>
-    <p>Car ID: ${carId}</p>
+    <p>Car ID: ${carId}</p> -->
+  <!-- Section: Features v.4 -->
+  <section class="my-5">
+
+      <!-- Section heading -->
+      <h2 class="h1-responsive font-weight-bold text-center my-5">Хороший выбор!</h2>
+      <!-- Section description -->
+      <p class="lead grey-text text-center w-responsive mx-auto mb-5">Ознакомтесь с характеристиками тут!</p>
+
+      <!-- Grid row -->
+      <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-md-4">
+
+              <!-- Grid row -->
+              <div class="row mb-3">
+
+                  <!-- Grid column -->
+                  <div class="col-2">
+                      <i class="fas fa-2x fa-flag-checkered deep-purple-text"></i>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-10">
+                      <h5 class="font-weight-bold mb-3">Марка: ${carMark}</h5>
+                      <p class="text-muted">Модель: ${car.getName()}</p>
+                  </div>
+                  <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+              <!-- Grid row -->
+              <div class="row mb-3">
+
+                  <!-- Grid column -->
+                  <div class="col-2">
+                      <i class="fas fa-2x fa-flask deep-purple-text"></i>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-10">
+                      <h5 class="font-weight-bold mb-3">Класс: ${car.getCarClass()}</h5>
+                      <p class="text-muted">Тип кузова: ${car.getBodyType()}</p>
+                      <p class="text-muted">Кол-во мест: ${car.getSeatsNum()}</p>
+                  </div>
+                  <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+              <!-- Grid row -->
+              <div class="row mb-md-0 mb-3">
+
+                  <!-- Grid column -->
+                  <div class="col-2">
+                      <i class="fas fa-2x fa-glass-martini deep-purple-text"></i>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-10">
+                      <h5 class="font-weight-bold mb-3">Страна: ${car.getCountry()}</h5>
+                      <p class="text-muted mb-md-0">Дата выпуска: ${car.getCarRelease()}</p>
+                  </div>
+                  <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 text-center">
+              <img class="img-fluid" src="${car.getCarImage()}"
+                   alt="Sample image">
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4">
+
+              <!-- Grid row -->
+              <div class="row mb-3">
+
+                  <!-- Grid column -->
+                  <div class="col-2">
+                      <i class="far fa-2x fa-heart deep-purple-text"></i>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-10">
+                      <h5 class="font-weight-bold mb-3">Мощность: ${car.getHPower()} л.с.</h5>
+                      <p class="text-muted">Макс. скорость: ${car.getMaxSpeed()} км/ч</p>
+                      <p class="text-muted">Тип КП: ${car.getGearbox()}</p>
+                  </div>
+                  <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+              <!-- Grid row -->
+              <div class="row mb-3">
+
+                  <!-- Grid column -->
+                  <div class="col-2">
+                      <i class="fas fa-2x fa-bolt deep-purple-text"></i>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-10">
+                      <h5 class="font-weight-bold mb-3">Цвет: ${car.getColor()}</h5>
+                      <p class="text-muted">НЕ СМОТРИТЕ НА КАРТИНКУ!!!</p>
+                  </div>
+                  <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+              <!-- Grid row -->
+              <div class="row">
+
+                  <!-- Grid column -->
+                  <div class="col-2">
+                      <i class="fas fa-2x fa-magic deep-purple-text"></i>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-10">
+                      <h5 class="font-weight-bold mb-3">Стоимость: ${car.getCost()} руб.</h5>
+                      <p class="text-muted mb-0">В СКОРОМ ВРЕМЕНИ СТАНЕТ ДОСТУПНО!!!</p>
+                  </div>
+                  <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+      <div class="container">
+          <a href="/main">
+              <button class="btn-primary">На главную</button></a>
+      </div>
+  </section>
+  <!-- Section: Features v.4 -->
+
 </body>
 </html>
