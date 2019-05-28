@@ -28,12 +28,14 @@ public class UserController {
             return "save_car";
         }
         else {
-            User u = userDao.findByName(username);
-            if (u.getPassword().equals(password)) {
-                return ("redirect:/user?id=" + u.getId());
-            } else {
-                return ("signIn_page_invalidData");
-            }
+            if (userDao.exists(username)) {
+                User u = userDao.findByName(username);
+                if (u.getPassword().equals(password)) {
+                    return ("redirect:/user?id=" + u.getId());
+                } else {
+                    return ("signIn_page_invalidData");
+                }
+            } else return "signIn_page_invalidData";
         }
     }
 

@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <title>Главная</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Список</h1>
+<!-- <h1>Список</h1>
 <div class="container-fluid">
 <ol>
-    <#list carList as car>
+  <#list carList as car>
         <li>
             <div class="row">
                 <div class="col-md-4"><img height="80px" src="${car.getCarImage()}" alt="null"></div>
@@ -36,6 +40,102 @@
         <input type="submit" value="Все">
     </form>
 </ol>
+</div> -->
+
+<div class="header">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand">BestAuto</a>
+
+            </div>
+
+
+            <div class="menu">
+                <ul class="nav navbar-nav" role="tablist">
+                    <li><a href="/main" role="tab" data-toggle="tab">Главная</a></li>
+                    <li><a href="#info" role="tab" data-toggle="tab">О нас</a></li>
+                    <li class="active"><a href="#autolist" role="tab" data-toggle="tab">Список авто</a></li>
+                    <li><a href="" role="tab" data-toggle="tab">Личный кабинет</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane" id="car-page">Текст</div>
+                    <div role="tabpanel" class="tab-pane" id="info">Вкладка о нас</div>
+                    <div role="tabpanel" class="tab-pane" id="autolist">Вкладка со списком</div>
+                    <div role="tabpanel" class="tab-pane" id="tab">Вкладка домой</div>
+
+                </div>
+            </div>
+
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Запрос">
+                    <button class="btn btn-danger">Поиск</button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
 </div>
+</nav>
+<form action="/main_page">
+    <input type="submit" name="mark_id" value="1">
+    <input type="submit" name="mark_id" value="2">
+</form>
+<form action="/main_page">
+    <input type="submit" value="Все">
+</form>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tbody>
+        <tr class="danger">
+            <th style="color:black">
+                <center></center>
+            </th>
+            <th style="color:black">
+                <center>Марка</center>
+            </th>
+            <th style="color:black">
+                <center>Модель</center>
+            </th>
+            <th style="color:black">
+                <center>Средняя цена</center>
+            </th>
+            <th style="color:black">
+                <center>Страница</center>
+            </th>
+        </tr>
+        </thead>
+        <#list carList as car>
+        <tr class="warning">
+            <td style="color:black">
+                <center><img height="80px" src="${car.getCarImage()}" alt="null"></center>
+            </td>
+            <td style="color:black">
+                <center><strong>${car.getMark()}</strong></center>
+            </td>
+            <td style="color:black">
+                <center>${car.getModel()}</center>
+            </td>
+            <td style="color:black">
+                <center>${car.getCost()} руб.</center>
+            </td>
+            <td style="color:black">
+                <center><a href="/car?id=${car.getId()}" class="btn btn-danger" role="button"><small>Открыть</small></button></a></center>
+            </td>
+        </tr>
+        </#list>
+    </table>
+
+</div>
+
+
+
 </body>
 </html>
